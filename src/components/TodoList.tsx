@@ -140,19 +140,6 @@ export const TodoList: React.FC<TodoListProps> = ({ filter }) => {
     })
   );
 
-  const confirmDeleteAll = () => {
-    setModalConfig({
-      title: "Delete All Tasks",
-      message:
-        "Are you sure you want to delete all tasks? This cannot be undone.",
-      onConfirm: () => {
-        setTodos([]);
-        setShowModal(false);
-      },
-    });
-    setShowModal(true);
-  };
-
   return (
     <>
       <div className="todo-container h-100 py-5">
@@ -180,10 +167,9 @@ export const TodoList: React.FC<TodoListProps> = ({ filter }) => {
               />
             </div>
 
-            {/* Move the toggle button here */}
             <div className="d-flex justify-content-between ">
               {todos.length > 0 && (
-                <div className="action-buttons d-flex  mb-3">
+                <div className="action-buttons d-flex mb-3">
                   <button className="btn btn-success" onClick={markAllDone}>
                     <i className="fas fa-check-double me-2"></i>
                     Mark All Done
@@ -214,39 +200,54 @@ export const TodoList: React.FC<TodoListProps> = ({ filter }) => {
                 <div className="todo-list">
                   {filteredTodos.length > 0 ? (
                     filteredTodos.map((todo) => (
-                      <div key={todo.id} className="todo-item card mb-2">
+                      <div key={todo.id} className="todo-item card ">
                         <div className="card-body">
-                          <div className="d-flex align-items-center flex-wrap mb-2">
-                            <div className="d-flex align-items-center flex-grow-1">
-                              <div className="form-check">
-                                <input
-                                  type="checkbox"
-                                  className="form-check-input"
-                                  checked={todo.completed}
-                                  onChange={() => toggleTodo(todo.id)}
-                                  aria-label={`Mark "${todo.text}" as ${
-                                    todo.completed ? "incomplete" : "complete"
-                                  }`}
-                                />
-                              </div>
-                              <span
-                                className={`badge bg-${getPriorityColor(
-                                  todo.priority
-                                )} ms-2`}
+                          <div className="d-flex align-items-start flex-wrap ">
+                            <div className="form-check ">
+                              <input
+                                type="checkbox"
+                                className="form-check-input"
+                                checked={todo.completed}
+                                onChange={() => toggleTodo(todo.id)}
+                                aria-label={`Mark "${todo.text}" as ${
+                                  todo.completed ? "incomplete" : "complete"
+                                }`}
+                              />
+                            </div>
+                            <div className="flex-grow-1">
+                              <label
+                                className={`form-check-label mb-0 ${
+                                  todo.completed
+                                    ? "text-decoration-line-through"
+                                    : ""
+                                }`}
                               >
-                                {todo.priority}
-                              </span>
-                              <div className="ms-2">
-                                <label
-                                  className={`form-check-label mb-0 ${
-                                    todo.completed
-                                      ? "text-decoration-line-through"
-                                      : ""
-                                  }`}
-                                >
-                                  {todo.text}
-                                </label>
-                              </div>
+                                {todo.text}
+                              </label>
+                              {(todo.dueDate || todo.notes) && (
+                                <div className="task-details ms-4 ps-2">
+                                  {todo.dueDate && (
+                                    <div className="text-muted small mb-1">
+                                      <i className="fas fa-calendar-alt me-2"></i>
+                                      Due:{" "}
+                                      {new Date(todo.dueDate).toLocaleString()}
+                                    </div>
+                                  )}
+                                  {todo.notes && (
+                                    <div className="text-muted small">
+                                      <i className="fas fa-sticky-note me-2"></i>
+                                      {todo.notes}
+                                    </div>
+                                  )}
+                                  <span
+                                    className={`badge bg-${getPriorityColor(
+                                      todo.priority
+                                    )} ms-2 mt-1`}
+                                  >
+                                    {todo.priority}
+                                  </span>
+                                </div>
+                              )}
                             </div>
                             <div className="btn-group ms-auto mt-2 mt-sm-0">
                               <button
@@ -267,22 +268,6 @@ export const TodoList: React.FC<TodoListProps> = ({ filter }) => {
                               </button>
                             </div>
                           </div>
-                          {(todo.dueDate || todo.notes) && (
-                            <div className="task-details ms-4 ps-2">
-                              {todo.dueDate && (
-                                <div className="text-muted small mb-1">
-                                  <i className="fas fa-calendar-alt me-2"></i>
-                                  Due: {new Date(todo.dueDate).toLocaleString()}
-                                </div>
-                              )}
-                              {todo.notes && (
-                                <div className="text-muted small">
-                                  <i className="fas fa-sticky-note me-2"></i>
-                                  {todo.notes}
-                                </div>
-                              )}
-                            </div>
-                          )}
                         </div>
                       </div>
                     ))
@@ -333,10 +318,6 @@ export const TodoList: React.FC<TodoListProps> = ({ filter }) => {
         onConfirm={modalConfig.onConfirm}
         onCancel={() => setShowModal(false)}
       />
-
-      <button className="btn btn-outline-danger" onClick={confirmDeleteAll}>
-        Delete All Tasks
-      </button>
     </>
   );
 };
