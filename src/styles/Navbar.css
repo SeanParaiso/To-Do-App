@@ -1,0 +1,26 @@
+.navbar {
+  background-color: rgba(207, 187, 187, 0.35);
+  -webkit-backdrop-filter: blur(12px);
+  backdrop-filter: blur(12px);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.15);
+  padding: 0.75rem 1.5rem;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+  height: 64px; /* Fixed height for navbar */
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1100; /* Higher than sidebar */
+}
+
+.navbar-logo {
+  height: 36px;
+  width: auto;
+  filter: drop-shadow(0 2px 8px rgba(0, 0, 0, 0.2));
+  opacity: 0.95;
+}
+
+.navbar-brand {
+  padding: 0;
+  margin: 0;
+}

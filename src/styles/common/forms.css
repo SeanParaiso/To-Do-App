@@ -1,0 +1,26 @@
+.form-control,
+.form-select {
+  border: 2px solid #e2e8f0;
+  border-radius: 8px;
+}
+
+.form-control:focus {
+  border-color: #5e1b89;
+  box-shadow: 0 0 0 3px rgba(94, 27, 137, 0.2);
+}
+
+.form-check-input {
+  border-width: 2px;
+  transition: all 0.2s ease;
+}
+
+.form-check-input:checked {
+  background-color: #5e1b89;
+  border-color: #5e1b89;
+}
+
+.form-label {
+  font-size: 0.875rem;
+  font-weight: 500;
+  color: #4a5568;
+}

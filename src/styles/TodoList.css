@@ -1,0 +1,239 @@
+.todo-container {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 1.5rem;
+  height: auto;
+  min-height: 100%;
+  background: rgba(0, 0, 0, 0.2);
+  border-radius: 16px;
+  -webkit-backdrop-filter: blur(12px);
+  backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.todo-item {
+  background-color: rgba(255, 255, 255, 0.05);
+  -webkit-backdrop-filter: blur(10px);
+  backdrop-filter: blur(10px);
+  border-radius: 8px;
+  transition: all 0.2s ease;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  margin-bottom: 0.5rem;
+}
+
+.todo-item:hover {
+  background-color: rgba(255, 255, 255, 0.1);
+}
+
+.todo-item .card-body {
+  padding: 0.75rem 1rem;
+}
+
+.todo-item .form-check {
+  padding-left: 0;
+  margin: 0;
+}
+
+.todo-item .form-check-input {
+  float: none;
+  margin: 0;
+  cursor: pointer;
+  border-color: rgba(255, 255, 255, 0.4);
+  background-color: rgba(255, 255, 255, 0.1);
+}
+
+.todo-item .form-check-input:checked {
+  background-color: #f4512c;
+  border-color: #f4512c;
+}
+
+.todo-item .form-check-label {
+  cursor: pointer;
+  color: rgba(255, 255, 255, 0.9);
+  font-size: 1rem;
+  padding: 0 0.5rem;
+}
+
+.badge {
+  text-transform: capitalize;
+  font-weight: 500;
+  font-size: 0.75rem;
+  padding: 0.35em 0.75em;
+  border-radius: 4px;
+  letter-spacing: 0.02em;
+}
+
+.badge.bg-danger {
+  background-color: rgba(244, 81, 44, 0.25) !important;
+  color: rgb(255, 180, 168) !important;
+  border: 1px solid rgba(244, 81, 44, 0.3);
+}
+
+.badge.bg-warning {
+  background-color: rgba(255, 171, 64, 0.25) !important;
+  color: rgb(255, 213, 168) !important;
+  border: 1px solid rgba(255, 171, 64, 0.3);
+}
+
+.badge.bg-success {
+  background-color: rgba(139, 92, 246, 0.25) !important;
+  color: rgb(214, 188, 255) !important;
+  border: 1px solid rgba(139, 92, 246, 0.3);
+}
+
+.task-details {
+  margin-left: 2.5rem !important;
+  padding-left: 1rem !important;
+  border-left: 2px solid rgba(255, 255, 255, 0.15);
+  font-size: 0.9rem;
+  color: rgba(255, 255, 255, 0.9);
+}
+
+.task-details i {
+  opacity: 0.8;
+  color: rgba(255, 255, 255, 0.9);
+}
+
+.btn-group .btn {
+  background-color: rgba(255, 255, 255, 0.1);
+  border: none;
+  color: rgba(255, 255, 255, 0.9);
+  padding: 0.25rem 0.5rem;
+  opacity: 0;
+  transition: opacity 0.2s ease;
+}
+
+.btn-group .btn:hover {
+  background-color: rgba(255, 255, 255, 0.2);
+  color: white;
+}
+
+.todo-item:hover .btn-group .btn {
+  opacity: 1;
+}
+
+.empty-state {
+  padding: 3rem 2rem;
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 12px;
+  -webkit-backdrop-filter: blur(10px);
+  backdrop-filter: blur(10px);
+  text-align: center;
+}
+
+.page-header {
+  margin-bottom: 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.page-header h1 {
+  font-size: 2rem;
+  font-weight: 600;
+  letter-spacing: -0.025em;
+}
+
+.search-bar {
+  margin-bottom: 1.5rem;
+}
+
+.search-bar input {
+  width: 100%;
+  padding: 0.5rem 1rem;
+  border: 1px solid rgba(255, 255, 255, 0.5);
+  border-radius: 8px;
+  background: rgba(255, 255, 255, 0.15);
+  color: rgba(255, 255, 255, 1);
+  transition: border-color 0.2s ease;
+}
+
+.search-bar input::placeholder {
+  color: rgba(255, 255, 255, 0.7);
+}
+
+.search-bar input:focus {
+  border-color: #f4512c;
+  outline: none;
+  box-shadow: 0 0 5px rgba(244, 81, 44, 0.5);
+}
+
+.action-buttons {
+  margin-bottom: 2rem;
+  opacity: 0.85;
+}
+
+.action-buttons .btn {
+  font-size: 0.875rem;
+}
+
+/* Override Bootstrap's text-muted class */
+.todo-item .text-muted {
+  color: rgba(255, 255, 255, 0.85) !important;
+}
+
+/* Add hover effect for better readability */
+.todo-item:hover .text-muted,
+.todo-item:hover .task-details {
+  color: rgba(255, 255, 255, 0.95) !important;
+}
+
+.todo-list {
+  padding: 0.5rem;
+}
+
+.calendar-view {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  gap: 1.5rem;
+  padding: 1rem;
+}
+
+.calendar-day {
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 12px;
+  padding: 1.5rem;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.calendar-day:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+}
+
+.calendar-date {
+  font-size: 1.5rem;
+  font-weight: bold;
+  margin-bottom: 1rem;
+  color: rgba(255, 255, 255, 0.9);
+  border-bottom: 2px solid rgba(255, 255, 255, 0.3);
+  padding-bottom: 0.5rem;
+}
+
+.task-card {
+  border-radius: 8px;
+  padding: 0.75rem;
+  margin-bottom: 0.5rem;
+  transition: background 0.2s ease;
+}
+
+.task-card:hover {
+  background: rgba(255, 255, 255, 0.3);
+}
+
+.task-title {
+  font-size: 1.2rem;
+  font-weight: 600;
+  color: rgba(255, 255, 255, 0.9);
+}
+
+.task-notes {
+  font-size: 0.9rem;
+  color: rgba(255, 255, 255, 0.7);
+}
+
+.task-card i {
+  font-size: 1.5rem;
+  color: rgba(255, 255, 255, 0.9);
+}

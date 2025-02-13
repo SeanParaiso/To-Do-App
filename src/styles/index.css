@@ -1,0 +1,12 @@
+@import "./layout.css";
+@import "./common/buttons.css";
+@import "./common/forms.css";
+@import "./Navbar.css";
+@import "./Sidebar.css";
+@import "./TodoList.css";
+@import "./Modal.css";
+
+/* Add responsive styles */
+@media (max-width: 768px) {
+  /* ... mobile styles ... */
+}

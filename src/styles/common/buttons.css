@@ -1,0 +1,124 @@
+.btn {
+  border-radius: 8px;
+  transition: all 0.2s ease;
+  padding: 0.5rem 1.25rem;
+  border: none;
+  font-weight: 500;
+}
+
+.btn-primary {
+  background: linear-gradient(135deg, #5e1b89, #962071);
+  border: none;
+}
+
+.btn-primary:hover,
+.btn-primary:focus {
+  background: linear-gradient(135deg, #4a1570, #801c61);
+  transform: translateY(-1px);
+  box-shadow: 0 4px 12px rgba(94, 27, 137, 0.2);
+}
+
+.btn-light {
+  background: rgba(255, 255, 255, 0.9);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  -webkit-backdrop-filter: blur(8px);
+  backdrop-filter: blur(8px);
+}
+
+.btn-light:hover {
+  background: rgba(255, 255, 255, 1);
+  transform: translateY(-1px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.btn-danger {
+  background: linear-gradient(135deg, #d84234, #f4512c);
+  border: none;
+}
+
+.btn-danger:hover,
+.btn-danger:focus {
+  background: linear-gradient(135deg, #c13b2e, #e04a28);
+  transform: translateY(-1px);
+  box-shadow: 0 4px 12px rgba(216, 66, 52, 0.2);
+}
+
+.btn-success {
+  background: linear-gradient(135deg, #2ea44f, #32c75b);
+  border: none;
+}
+
+.btn-success:hover,
+.btn-success:focus {
+  background: linear-gradient(135deg, #298c43, #2bb351);
+  transform: translateY(-1px);
+  box-shadow: 0 4px 12px rgba(46, 164, 79, 0.2);
+}
+
+.btn-outline-primary {
+  color: rgb(190, 149, 255);
+  border-color: rgba(190, 149, 255, 0.3);
+}
+
+.btn-outline-primary:hover {
+  background: linear-gradient(135deg, #5e1b89, #962071);
+  border-color: transparent;
+  color: white;
+}
+
+.btn-outline-danger {
+  color: rgb(244, 81, 44);
+  border-color: rgba(244, 81, 44, 0.3);
+}
+
+.btn-outline-danger:hover {
+  background: linear-gradient(135deg, #d84234, #f4512c);
+  border-color: transparent;
+  color: white;
+}
+
+/* Button groups */
+.btn-group {
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.btn-group .btn {
+  padding: 0.4rem 0.75rem;
+  position: relative;
+}
+
+.btn-group .btn:hover {
+  z-index: 2;
+}
+
+.todo-item .btn-group .btn {
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+}
+
+.btn-add-task {
+  background: rgba(244, 81, 44, 0.2);
+  color: rgb(255, 255, 255);
+  -webkit-backdrop-filter: blur(8px);
+  backdrop-filter: blur(8px);
+  border: 1px solid rgba(244, 81, 44, 0.3);
+  font-weight: 500;
+}
+
+.btn-add-task:hover {
+  background: rgba(244, 81, 44, 0.3);
+  color: white;
+  transform: translateY(-1px);
+  box-shadow: 0 4px 12px rgba(244, 81, 44, 0.2);
+}
+
+.btn-group .btn i {
+  font-size: 0.875rem;
+}
+
+/* Update action buttons */
+.action-buttons .btn {
+  font-weight: 500;
+  letter-spacing: 0.01em;
+}
