@@ -237,3 +237,49 @@
   font-size: 1.5rem;
   color: rgba(255, 255, 255, 0.9);
 }
+
+.progress-tracker {
+  margin-bottom: 1.5rem;
+}
+
+.progress-bar-container {
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 8px;
+  height: 20px;
+  overflow: hidden;
+}
+
+.progress-bar {
+  height: 100%;
+  transition: width 0.3s ease;
+}
+
+.progress-text {
+  margin-top: 0.5rem;
+  color: rgba(255, 255, 255, 0.9);
+  font-size: 0.9rem;
+  text-align: right; /* Align text to the right */
+}
+
+/* Mobile styles */
+@media (max-width: 768px) {
+  .todo-item {
+    padding: 0.5rem; /* Adjust padding for todo items */
+  }
+
+  .search-bar {
+    margin-bottom: 1rem; /* Adjust margin for search bar */
+  }
+
+  .progress-tracker {
+    margin-bottom: 1rem; /* Adjust margin for progress tracker */
+  }
+
+  .action-buttons {
+    margin-bottom: 1rem; /* Adjust margin for action buttons */
+  }
+
+  .calendar-day {
+    padding: 1rem; /* Adjust padding for calendar days */
+  }
+}

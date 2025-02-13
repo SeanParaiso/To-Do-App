@@ -4,6 +4,7 @@ import { Modal } from "./Modal";
 import { FilterType } from "./Sidebar";
 import { TaskModal } from "./TaskModal";
 import { CalendarView } from "./CalendarView";
+import { ProgressTracker } from "./ProgressTracker";
 
 interface TodoListProps {
   filter: FilterType;
@@ -86,19 +87,6 @@ export const TodoList: React.FC<TodoListProps> = ({ filter }) => {
     setShowModal(true);
   };
 
-  const confirmDeleteAll = () => {
-    setModalConfig({
-      title: "Delete All Tasks",
-      message:
-        "Are you sure you want to delete all tasks? This cannot be undone.",
-      onConfirm: () => {
-        setTodos([]);
-        setShowModal(false);
-      },
-    });
-    setShowModal(true);
-  };
-
   const markAllDone = () => {
     setTodos(todos.map((todo) => ({ ...todo, completed: true })));
   };
@@ -152,6 +140,19 @@ export const TodoList: React.FC<TodoListProps> = ({ filter }) => {
     })
   );
 
+  const confirmDeleteAll = () => {
+    setModalConfig({
+      title: "Delete All Tasks",
+      message:
+        "Are you sure you want to delete all tasks? This cannot be undone.",
+      onConfirm: () => {
+        setTodos([]);
+        setShowModal(false);
+      },
+    });
+    setShowModal(true);
+  };
+
   return (
     <>
       <div className="todo-container h-100 py-5">
@@ -168,6 +169,7 @@ export const TodoList: React.FC<TodoListProps> = ({ filter }) => {
                 Add Task
               </button>
             </div>
+            <ProgressTracker todos={todos} />
             <div className="search-bar">
               <input
                 type="text"
@@ -331,6 +333,10 @@ export const TodoList: React.FC<TodoListProps> = ({ filter }) => {
         onConfirm={modalConfig.onConfirm}
         onCancel={() => setShowModal(false)}
       />
+
+      <button className="btn btn-outline-danger" onClick={confirmDeleteAll}>
+        Delete All Tasks
+      </button>
     </>
   );
 };

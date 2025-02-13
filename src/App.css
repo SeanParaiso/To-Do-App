@@ -13,11 +13,11 @@
   .main-content {
     margin-left: 0;
     width: 100%;
-    padding: 0;
+    padding: 1rem;
   }
 
   .todo-container {
-    padding: 0 0.5rem;
+    padding: 1rem;
   }
 
   /* Adjust task items for mobile */
@@ -77,5 +77,9 @@
 
   .page-header .btn {
     width: 100%;
+  }
+
+  .content-wrapper {
+    padding: 0 1rem;
   }
 }
